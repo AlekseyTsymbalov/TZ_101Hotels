@@ -1,0 +1,35 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.comments-wrapper .card,
+#comment-form,
+.card {
+    border-radius: 0.5rem;
+}
+
+.comment-text {
+    white-space: pre-line;
+    word-break: break-word;
+}
+
+.pagination .page-link {
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .form-inline {
+        display: block;
+        width: 100%;
+    }
+
+    .form-inline .form-control {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .js-delete-comment {
+        width: 100%;
+    }
+}

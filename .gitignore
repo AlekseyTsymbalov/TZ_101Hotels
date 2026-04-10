@@ -1,0 +1,13 @@
+/vendor/
+/.env
+/writable/cache/
+/writable/logs/
+/writable/session/
+/writable/uploads/
+/writable/debugbar/
+
+node_modules/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

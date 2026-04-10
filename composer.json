@@ -1,0 +1,16 @@
+{
+  "name": "tz/101hotels",
+  "description": "Test task for 101Hotels",
+  "type": "project",
+  "require": {
+    "php": "^7.4",
+    "codeigniter4/framework": "4.4.8"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "audit": {
+      "block-insecure": false
+    }
+  }
+}
