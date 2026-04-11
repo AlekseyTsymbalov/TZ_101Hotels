@@ -71,12 +71,16 @@ class Comments extends BaseController
 
         $dateInput = trim((string) $this->request->getPost('date'));
 
-        $date = \DateTime::createFromFormat('d.m.Y H:i', $dateInput);
+        $date = \DateTime::createFromFormat('!d.m.Y H:i', $dateInput);
         $errors = \DateTime::getLastErrors();
 
-        if ($date === false || $errors['warning_count'] > 0 || $errors['error_count'] > 0) {
+        $hasDateErrors = $date === false
+            || ($errors !== false && ($errors['warning_count'] > 0 || $errors['error_count'] > 0))
+            || ($date !== false && $date->format('d.m.Y H:i') !== $dateInput);
+
+        if ($hasDateErrors) {
             return $this->failValidation([
-                'date' => 'Некорректная дата. Используйте формат ДД.ММ.ГГГГ ЧЧ:ММ',
+                'date' => 'Некорректная дата. Формат: ДД.ММ.ГГГГ ЧЧ:ММ',
             ]);
         }
 
